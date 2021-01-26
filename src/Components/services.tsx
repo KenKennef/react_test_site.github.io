@@ -9,7 +9,7 @@ export default function Services(props: any) {
 			<Grid item lg={7}>
 				<ServiceCard
 					image='https://static.s123-cdn-static.com/uploads/1980551/800_5700fe9d754d9.jpg'
-					heading='Duis aute irure dolor'
+					heading='Duis aute irure dolor ffds'
 					text='Duis aute irure dolor'
 					buttonText='Duis aute'
 				/>
