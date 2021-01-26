@@ -9,7 +9,7 @@ export default function Home(props: any) {
 				<MediaCard
 					image='https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 					hasContent
-					header='Velkommen til Y. A Den professionelle Gulvmand'
+					header='Duis aute irure dolor'
 					content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris
