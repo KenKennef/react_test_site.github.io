@@ -36,7 +36,7 @@ interface ServiceCardProps {
 	image: string;
 	heading: string;
 	text: string;
-	buttonText: string;
+	buttonText?: string;
 	variant?: 'image-right' | 'image-left';
 }
 
@@ -77,9 +77,11 @@ export default function ServiceCard(props: ServiceCardProps) {
 					item
 					xs={12}
 				>
-					<Button variant='contained' className={classes.btn}>
-						{props.buttonText}
-					</Button>
+					{props.buttonText ? (
+						<Button variant='contained' className={classes.btn}>
+							{props.buttonText}
+						</Button>
+					) : null}
 				</Grid>
 			</Grid>
 		);
