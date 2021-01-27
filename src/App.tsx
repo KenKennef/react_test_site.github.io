@@ -122,7 +122,7 @@ export default function PersistentDrawerLeft() {
 						</IconButton>
 						<Link to='/' className={classes.headerLink}>
 							<Typography variant='h6' noWrap>
-								[Y.A] Den professionelle gulvmand
+								Duis aute irure dolor
 							</Typography>
 						</Link>
 					</Toolbar>
