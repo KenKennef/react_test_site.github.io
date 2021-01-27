@@ -36,7 +36,7 @@ export default function MediaCard(props: any) {
 				<CardMedia
 					className={classes.media}
 					image={props.image}
-					title='Y. A Den professionelle Gulvmand'
+					title='Exepteur'
 				/>
 			</CardActionArea>
 			{props.hasActions ? (
