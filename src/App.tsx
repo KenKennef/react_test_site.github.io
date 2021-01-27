@@ -181,13 +181,13 @@ export default function PersistentDrawerLeft() {
 							<Home />
 						</Route>
 						<Route path='/about'>
-							<About />
+							<Paralaxx />
 						</Route>
 						<Route path='/services'>
 							<Services />
 						</Route>
 						<Route path='/contact'>
-							<Paralaxx />
+							<About />
 						</Route>
 					</Switch>
 				</main>
