@@ -11,9 +11,22 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
 	root: {
 		maxWidth: '100%',
+		position: 'relative',
 	},
 	media: {
 		height: 400,
+	},
+	parallax: {
+		/* The image used */
+		// background-image: url("img_parallax.jpg");
+
+		/* Set a specific height */
+		minHeight: 500,
+		/* Create the parallax scrolling effect */
+		backgroundAttachment: 'fixed',
+		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+		backgroundSize: 'cover',
 	},
 });
 
@@ -34,7 +47,7 @@ export default function MediaCard(props: any) {
 					</CardContent>
 				) : null}
 				<CardMedia
-					className={classes.media}
+					className={props.hasParallax ? classes.parallax : classes.media}
 					image={props.image}
 					title='Exepteur'
 				/>

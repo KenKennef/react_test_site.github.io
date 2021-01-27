@@ -19,6 +19,7 @@ import Home from './Components/home';
 import About from './Components/about';
 import Services from './Components/services';
 import { AddIcCall, Assignment, HomeRounded, Info } from '@material-ui/icons';
+import Paralaxx from './Components/parallax';
 
 const drawerWidth = 220;
 
@@ -185,7 +186,7 @@ export default function PersistentDrawerLeft() {
 							<Services />
 						</Route>
 						<Route path='/contact'>
-							<h1>Aminim</h1>
+							<Paralaxx />
 						</Route>
 					</Switch>
 				</main>
