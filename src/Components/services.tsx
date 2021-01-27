@@ -14,19 +14,6 @@ export default function Services(props: any) {
 					buttonText='Duis aute lorum'
 				/>
 				<ServiceCard
-					image='https://static.s123-cdn-static.com/uploads/1980551/800_5c83d4bac8c49.jpg'
-					heading='Duis aute irure dolor'
-					text='Duis aute irure dolor'
-					buttonText='Duis aute'
-					// variant='image-right'
-				/>
-				<ServiceCard
-					image='https://static.s123-cdn-static.com/uploads/1980551/800_5c842e0e5ae5d.jpg'
-					heading='Duis aute irure dolor'
-					text='Duis aute irure dolor'
-					buttonText='Duis aute'
-				/>
-				<ServiceCard
 					image='https://static.s123-cdn-static.com/uploads/1980551/800_5c843748d80b3.jpg'
 					heading='Duis aute irure dolor'
 					text='Duis aute irure dolor'
