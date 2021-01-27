@@ -10,7 +10,7 @@ export default function Services(props: any) {
 				<ServiceCard
 					image='https://static.s123-cdn-static.com/uploads/1980551/800_5700fe9d754d9.jpg'
 					heading='Duis aute irure dolor ffds'
-					text='Duis aute irure dolor'
+					text='Duis aute irure dolor na'
 					buttonText='Duis aute lorum'
 				/>
 				<ServiceCard
