@@ -185,7 +185,7 @@ export default function PersistentDrawerLeft() {
 							<Services />
 						</Route>
 						<Route path='/contact'>
-							<h1>Kontakt</h1>
+							<h1>Aminim</h1>
 						</Route>
 					</Switch>
 				</main>
