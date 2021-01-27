@@ -13,13 +13,13 @@ export default function Services(props: any) {
 					text='Duis aute irure dolor na'
 					buttonText='Duis aute lorum'
 				/>
-				<ServiceCard
+				{/* <ServiceCard
 					image='https://static.s123-cdn-static.com/uploads/1980551/800_5c843748d80b3.jpg'
 					heading='Duis aute irure dolor'
 					text='Duis aute irure dolor'
 					buttonText='Lorum duis aute'
 					variant='image-right'
-				/>
+				/> */}
 			</Grid>
 		</Grid>
 	);
