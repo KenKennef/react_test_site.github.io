@@ -144,10 +144,10 @@ export default function PersistentDrawerLeft() {
 					<Divider />
 					<List>
 						{[
-							{ text: 'Hjem', link: '/', icon: 'Home' },
-							{ text: 'Om', link: '/about', icon: 'Info' },
-							{ text: 'Services', link: '/services', icon: 'Assignment' },
-							{ text: 'Kontakt', link: '/contact', icon: 'AddIcCall' },
+							{ text: 'Eenim', link: '/', icon: 'Home' },
+							{ text: 'Ullamco', link: '/about', icon: 'Info' },
+							{ text: 'Daliquip', link: '/services', icon: 'Assignment' },
+							{ text: 'Aminim', link: '/contact', icon: 'AddIcCall' },
 						].map((item, index) => (
 							<Link to={item.link} className={classes.menuLink} key={index}>
 								<ListItem
