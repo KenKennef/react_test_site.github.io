@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
 	root: {
 		maxWidth: '100%',
 		position: 'relative',
@@ -19,7 +19,14 @@ const useStyles = makeStyles({
 		height: 400,
 	},
 	carousel: {
-		height: 600,
+		[theme.breakpoints.up('lg')]: {
+			height: 600,
+		},
+	},
+	carouselMobileImage: {
+		[theme.breakpoints.down('md')]: {
+			height: 400,
+		},
 	},
 	parallax: {
 		/* The image used */
@@ -33,7 +40,7 @@ const useStyles = makeStyles({
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 	},
-});
+}));
 
 interface MediaCardProps {
 	images: string[];
@@ -50,7 +57,7 @@ export default function MediaCard(props: MediaCardProps) {
 	const renderImages = () => {
 		return props.images.map((img: string, index: number) => (
 			<div key={index}>
-				<img src={img} alt='#' />
+				<img src={img} alt='#' className={classes.carouselMobileImage} />
 			</div>
 		));
 	};
