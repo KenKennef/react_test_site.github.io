@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			height: '100%',
 			width: '100%',
 			maxWidth: 260,
-			maxHeight: 190,
+			maxHeight: 'auto',
 		},
 		btn: {
 			position: 'absolute',
@@ -46,7 +46,7 @@ export default function ServiceCard(props: ServiceCardProps) {
 		return (
 			<Grid
 				item
-				xs={12}
+				xs={6}
 				lg={3}
 				container
 				justify={props?.variant === 'image-right' ? 'flex-end' : 'flex-start'}
@@ -65,7 +65,7 @@ export default function ServiceCard(props: ServiceCardProps) {
 				: props.text;
 		};
 		return (
-			<Grid item xs={12} lg={9}>
+			<Grid item xs={6} lg={9}>
 				<Grid item xs={12}>
 					<Typography variant='h4'>{props.heading}</Typography>
 
@@ -89,7 +89,7 @@ export default function ServiceCard(props: ServiceCardProps) {
 
 	return (
 		<Paper className={classes.root} elevation={3}>
-			<Grid container justify='space-between' spacing={3}>
+			<Grid container justify='flex-start' spacing={2}>
 				{props?.variant ? (
 					props.variant === 'image-right' ? (
 						<React.Fragment>

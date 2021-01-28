@@ -5,8 +5,8 @@ import ServiceCard from './service-card';
 
 export default function Services(props: any) {
 	return (
-		<Grid container spacing={3} justify='center'>
-			<Grid item lg={7}>
+		<Grid container spacing={1} justify='center'>
+			<Grid item lg={10}>
 				<ServiceCard
 					image='https://static.s123-cdn-static.com/uploads/1980551/800_5700fe9d754d9.jpg'
 					heading='Duis aute irure dolor ffds'
