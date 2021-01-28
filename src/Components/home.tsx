@@ -12,6 +12,7 @@ export default function Home(props: any) {
 					images={[
 						'https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 						'https://images.pexels.com/photos/1388944/floor-flooring-hand-man-1388944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+						'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 					]}
 					hasContent
 					header='Duis aute irure dolor'

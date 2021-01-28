@@ -18,6 +18,9 @@ const useStyles = makeStyles({
 	media: {
 		height: 400,
 	},
+	carousel: {
+		height: 600,
+	},
 	parallax: {
 		/* The image used */
 		// background-image: url("img_parallax.jpg");
@@ -65,13 +68,16 @@ export default function MediaCard(props: MediaCardProps) {
 				</CardContent>
 			) : null}
 			{props.images.length > 1 ? (
-				<CardMedia className={classes.media}>
+				<CardMedia className={classes.carousel}>
 					<Carousel
 						autoPlay
+						interval={4000}
 						infiniteLoop
-						showIndicators={false}
 						showStatus={false}
+						showArrows
+						showIndicators
 						showThumbs={false}
+						stopOnHover={false}
 					>
 						{renderImages()}
 					</Carousel>
