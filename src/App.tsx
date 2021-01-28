@@ -1,6 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
+import Backdrop from '@material-ui/core/Backdrop';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
@@ -9,17 +9,16 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { AddIcCall, Assignment, HomeRounded, Info } from '@material-ui/icons';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MenuIcon from '@material-ui/icons/Menu';
-import Backdrop from '@material-ui/core/Backdrop';
+import clsx from 'clsx';
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import clsx from 'clsx';
-import Home from './Components/home';
 import About from './Components/about';
-import Services from './Components/services';
-import { AddIcCall, Assignment, HomeRounded, Info } from '@material-ui/icons';
+import Home from './Components/home';
 import Paralaxx from './Components/parallax';
+import Services from './Components/services';
 
 const drawerWidth = 260;
 
@@ -119,11 +118,22 @@ const useStyles = makeStyles((theme: Theme) =>
 		menuLink: { textDecoration: 'none', color: '#0E2F44' },
 	})
 );
+interface NavigationItem {
+	text: string;
+	link: string;
+	icon: string;
+}
+const navigationItems: NavigationItem[] = [
+	{ text: 'Eenim', link: '/', icon: 'Home' },
+	{ text: 'Ullamco', link: '/about', icon: 'Info' },
+	{ text: 'Daliquip', link: '/services', icon: 'Assignment' },
+	{ text: 'Aminim', link: '/contact', icon: 'AddIcCall' },
+];
 
 export default function PersistentDrawerLeft() {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
-	const [active, setActive] = React.useState(0);
+	const [active, setActive] = React.useState<number | null>(null);
 
 	const handleMenuClick = (index: number) => {
 		setOpen(false);
@@ -138,13 +148,18 @@ export default function PersistentDrawerLeft() {
 		setOpen(false);
 	};
 
+	React.useEffect(() => {
+		const active = navigationItems
+			.map((item: NavigationItem) => {
+				return item.link;
+			})
+			.indexOf(window.location.pathname);
+
+		setActive(active);
+	}, [active]);
+
 	const renderNavigationItems = () =>
-		[
-			{ text: 'Eenim', link: '/', icon: 'Home' },
-			{ text: 'Ullamco', link: '/about', icon: 'Info' },
-			{ text: 'Daliquip', link: '/services', icon: 'Assignment' },
-			{ text: 'Aminim', link: '/contact', icon: 'AddIcCall' },
-		].map((item, index) => (
+		navigationItems.map((item, index) => (
 			<Link to={item.link} className={classes.menuLink} key={index}>
 				<ListItem
 					button
