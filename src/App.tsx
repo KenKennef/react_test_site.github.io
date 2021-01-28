@@ -181,7 +181,7 @@ export default function PersistentDrawerLeft() {
 					})}
 					style={{ background: '#0E2F44' }}
 				>
-					<Toolbar style={{ border: '1px solid white' }}>
+					<Toolbar>
 						<IconButton
 							color='inherit'
 							aria-label='open drawer'
