@@ -42,8 +42,32 @@ const useStyles = makeStyles((theme: Theme) =>
 				duration: theme.transitions.duration.enteringScreen,
 			}),
 		},
+		mainNavigation: {
+			margin: 0,
+			padding: 0,
+			display: 'flex',
+			flexFlow: 'colunm',
+			[theme.breakpoints.down('sm')]: {
+				display: 'none',
+			},
+			[theme.breakpoints.up('md')]: {
+				display: 'block',
+			},
+		},
+		mainNavigationLink: {
+			display: 'block',
+			color: '#ffffff',
+			textDecoration: 'none',
+			margin: '10px 0',
+		},
 		menuButton: {
 			marginRight: theme.spacing(2),
+			// [theme.breakpoints.down('sm')]: {
+			// 	display: 'block',
+			// },
+			// [theme.breakpoints.up('md')]: {
+			// 	display: 'none',
+			// },
 		},
 		hide: {
 			display: 'none',

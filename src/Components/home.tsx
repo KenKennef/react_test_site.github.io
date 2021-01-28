@@ -9,7 +9,7 @@ export default function Home(props: any) {
 		<Grid container spacing={3}>
 			<Grid item xs={12}>
 				<MediaCard
-					image='https://images.pexels.com/photos/1388944/floor-flooring-hand-man-1388944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+					image='https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 					hasContent
 					header='Duis aute irure dolor'
 					content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -23,7 +23,7 @@ export default function Home(props: any) {
 			</Grid>
 			<Grid item xs={12} lg={6}>
 				<MediaCard
-					image='https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+					image='https://images.pexels.com/photos/1388944/floor-flooring-hand-man-1388944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 					hasContent
 					header='Excepteur sint occaecat cupidatat'
 					content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
