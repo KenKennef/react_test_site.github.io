@@ -29,12 +29,22 @@ export default function About(props: any) {
 							</Typography>
 						</Grid>
 						<Grid item xs={12} lg={6}>
-							<MediaCard image='https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
+							<MediaCard
+								images={[
+									'https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+								]}
+								hasContent={false}
+							/>
 						</Grid>
 					</Grid>
 					<Grid container spacing={3}>
 						<Grid item xs={12} lg={6}>
-							<MediaCard image='https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
+							<MediaCard
+								images={[
+									'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+								]}
+								hasContent={false}
+							/>
 						</Grid>
 						<Grid item xs={12} lg={6}>
 							<Typography variant='h4'>

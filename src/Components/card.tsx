@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const useStyles = makeStyles({
 	root: {
@@ -30,28 +32,58 @@ const useStyles = makeStyles({
 	},
 });
 
-export default function MediaCard(props: any) {
+interface MediaCardProps {
+	images: string[];
+	hasContent: boolean;
+	header?: string;
+	content?: string;
+	hasActions?: boolean;
+	hasParallax?: boolean;
+}
+
+export default function MediaCard(props: MediaCardProps) {
 	const classes = useStyles();
 
+	const renderImages = () => {
+		return props.images.map((img: string, index: number) => (
+			<div key={index}>
+				<img src={img} alt='#' />
+			</div>
+		));
+	};
 	return (
-		<Card className={classes.root}>
-			<CardActionArea>
-				{props.hasContent ? (
-					<CardContent>
-						<Typography gutterBottom variant='h5' component='h2'>
-							{props.header}
-						</Typography>
-						<Typography variant='body2' color='textSecondary' component='p'>
-							{props.content}
-						</Typography>
-					</CardContent>
-				) : null}
+		<Card className={classes.root} component='div'>
+			{/* <CardActionArea> */}
+			{props.hasContent ? (
+				<CardContent>
+					<Typography gutterBottom variant='h5' component='h2'>
+						{props.header}
+					</Typography>
+					<Typography variant='body2' color='textSecondary' component='p'>
+						{props.content}
+					</Typography>
+				</CardContent>
+			) : null}
+			{props.images.length > 1 ? (
+				<CardMedia className={classes.media}>
+					<Carousel
+						autoPlay
+						infiniteLoop
+						showIndicators={false}
+						showStatus={false}
+						showThumbs={false}
+					>
+						{renderImages()}
+					</Carousel>
+				</CardMedia>
+			) : (
 				<CardMedia
 					className={props.hasParallax ? classes.parallax : classes.media}
-					image={props.image}
+					image={props.images[0]}
 					title='Exepteur'
 				/>
-			</CardActionArea>
+			)}
+			{/* </CardActionArea> */}
 			{props.hasActions ? (
 				<CardActions>
 					<Button size='small' color='primary'>
