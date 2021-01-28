@@ -210,7 +210,11 @@ export default function PersistentDrawerLeft() {
 						>
 							<MenuIcon />
 						</IconButton>
-						<Link to='/' className={clsx(classes.headerLink)}>
+						<Link
+							to='/'
+							className={clsx(classes.headerLink)}
+							onClick={() => handleMenuClick(0)}
+						>
 							<Typography variant='h6' noWrap>
 								Duis aute irure dolor
 							</Typography>
