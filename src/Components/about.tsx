@@ -29,7 +29,37 @@ export default function About(props: any) {
 							</Typography>
 						</Grid>
 						<Grid item xs={12} lg={6}>
-							<MediaCard image='https://via.placeholder.com/150&text=.' />
+							<MediaCard image='https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
+						</Grid>
+					</Grid>
+					<Grid container spacing={3}>
+						<Grid item xs={12} lg={6}>
+							<MediaCard image='https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
+						</Grid>
+						<Grid item xs={12} lg={6}>
+							<Typography variant='h4'>
+								Ut enim ad minima veniam, quis nostrum exercitationem
+							</Typography>
+							<Typography paragraph>
+								Et harum quidem rerum facilis est et expedita distinctio. Nam
+								libero tempore, cum soluta nobis est eligendi optio cumque nihil
+								impedit quo minus id quod maxime placeat facere possimus, omnis
+								voluptas assumenda est, omnis dolor repellendus. Temporibus
+								autem quibusdam et aut officiis debitis aut rerum necessitatibus
+								saepe eveniet ut et voluptates repudiandae sint et molestiae non
+								recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+								ut aut reiciendis voluptatibus maiores alias consequatur aut
+								perferendis doloribus asperiores repellat, rerum facilis est et
+								expedita distinctio. Nam libero tempore, cum soluta nobis est
+								eligendi optio cumque nihil impedit quo minus id quod maxime
+								placeat facere possimus, omnis voluptas assumenda est, omnis
+								dolor repellendus. Temporibus autem quibusdam et aut officiis
+								debitis aut rerum necessitatibus saepe eveniet ut et voluptates
+								repudiandae sint et molestiae non recusandae. Itaque earum rerum
+								hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+								maiores alias consequatur aut perferendis doloribus asperiores
+								repellat.
+							</Typography>
 						</Grid>
 					</Grid>
 				</Paper>
