@@ -1,3 +1,4 @@
+import { Grid, Paper } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Backdrop from '@material-ui/core/Backdrop';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -27,20 +28,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		root: {
 			display: 'flex',
 		},
-		appBar: {
-			// transition: theme.transitions.create(['margin', 'width'], {
-			// 	easing: theme.transitions.easing.sharp,
-			// 	duration: theme.transitions.duration.leavingScreen,
-			// }),
-		},
-		appBarShift: {
-			// width: `calc(100% - ${drawerWidth}px)`,
-			// marginLeft: drawerWidth,
-			// transition: theme.transitions.create(['margin', 'width'], {
-			// 	easing: theme.transitions.easing.easeOut,
-			// 	duration: theme.transitions.duration.enteringScreen,
-			// }),
-		},
 		mainNavigation: {
 			margin: 0,
 			padding: 0,
@@ -62,12 +49,6 @@ const useStyles = makeStyles((theme: Theme) =>
 			[theme.breakpoints.up('md')]: {
 				display: 'none',
 			},
-		},
-		mainNavigationLink: {
-			display: 'block',
-			color: '#ffffff',
-			textDecoration: 'none',
-			margin: '10px 0',
 		},
 		menuButton: {
 			marginRight: theme.spacing(2),
@@ -115,7 +96,11 @@ const useStyles = makeStyles((theme: Theme) =>
 			textDecoration: 'none',
 			color: '#fff',
 		},
-		menuLink: { textDecoration: 'none', color: '#0E2F44' },
+		menuLink: {
+			textDecoration: 'none',
+			color: '#0E2F44',
+			boxSizing: 'border-box',
+		},
 	})
 );
 interface NavigationItem {
@@ -125,9 +110,9 @@ interface NavigationItem {
 }
 const navigationItems: NavigationItem[] = [
 	{ text: 'Eenim', link: '/', icon: 'Home' },
-	{ text: 'Ullamco', link: '/about', icon: 'Info' },
-	{ text: 'Daliquip', link: '/services', icon: 'Assignment' },
-	{ text: 'Aminim', link: '/contact', icon: 'AddIcCall' },
+	{ text: 'Ullamco', link: '/ullamco', icon: 'Info' },
+	{ text: 'Daliquip', link: '/daliquip', icon: 'Assignment' },
+	{ text: 'Aminim', link: '/aminim', icon: 'AddIcCall' },
 ];
 
 export default function PersistentDrawerLeft() {
@@ -160,21 +145,45 @@ export default function PersistentDrawerLeft() {
 
 	const renderNavigationItems = () =>
 		navigationItems.map((item, index) => (
-			<Link to={item.link} className={classes.menuLink} key={index}>
+			<Link
+				to={item.link}
+				className={classes.menuLink}
+				key={index}
+				style={
+					open
+						? {}
+						: {
+								color: '#ffffff',
+								borderTop:
+									index === active
+										? '1px solid rgba(255, 255, 255, .5)'
+										: 'none',
+								borderRight: 'none',
+								borderBottom:
+									index === active
+										? '3px solid rgba(255, 255, 255, .8)'
+										: 'none',
+								borderLeft: 'none',
+								borderBottomRightRadius: 3,
+								borderBottomLeftRadius: 3,
+						  }
+				}
+			>
 				<ListItem
 					button
 					onClick={() => handleMenuClick(index)}
-					selected={index === active}
-					style={
-						open
-							? {}
-							: {
-									color: '#ffffff',
-									textDecoration: index === active ? 'underline' : 'none',
-							  }
-					}
+					selected={open ? index === active : false}
 				>
-					<ListItemIcon className={classes.mobileOnly}>
+					<ListItemIcon
+						style={
+							open
+								? {}
+								: {
+										color: '#ffffff',
+										marginRight: -20,
+								  }
+						}
+					>
 						{item.icon === 'Home' ? <HomeRounded /> : null}
 						{item.icon === 'Info' ? <Info /> : null}
 						{item.icon === 'Assignment' ? <Assignment /> : null}
@@ -189,13 +198,7 @@ export default function PersistentDrawerLeft() {
 		<Router>
 			<div className={classes.root}>
 				<CssBaseline />
-				<AppBar
-					position='fixed'
-					className={clsx(classes.appBar, {
-						[classes.appBarShift]: open,
-					})}
-					style={{ background: '#0E2F44' }}
-				>
+				<AppBar position='fixed' style={{ background: '#0E2F44' }}>
 					<Toolbar>
 						<IconButton
 							color='inherit'
@@ -255,19 +258,44 @@ export default function PersistentDrawerLeft() {
 						onClick={handleDrawerClose}
 					></Backdrop>
 					<div className={classes.drawerHeader} />
-
 					<Switch>
 						<Route exact path='/'>
 							<Home />
 						</Route>
-						<Route path='/about'>
+						<Route path='/ullamco'>
 							<Paralaxx />
 						</Route>
-						<Route path='/services'>
+						<Route path='/daliquip'>
 							<Services />
 						</Route>
-						<Route path='/contact'>
+						<Route path='/aminim'>
 							<About />
+						</Route>
+						<Route path='*'>
+							<Grid container justify='space-around'>
+								<Grid item md={8}>
+									<Paper
+										style={{
+											display: 'flex',
+											flexDirection: 'column',
+											alignItems: 'center',
+											padding: 20,
+										}}
+									>
+										<Typography variant='subtitle1'>Fejl 404</Typography>
+										<Typography variant='subtitle1' style={{ marginTop: 50 }}>
+											Siden du forsøger at hente kunne ikke findes
+										</Typography>{' '}
+										<Typography variant='body1' style={{ marginTop: 50 }}>
+											Klik{' '}
+											<Link to='/' onClick={() => handleMenuClick(0)}>
+												her
+											</Link>{' '}
+											for at komme i sikkerhed.
+										</Typography>
+									</Paper>
+								</Grid>
+							</Grid>
 						</Route>
 					</Switch>
 				</main>
