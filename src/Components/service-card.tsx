@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		image: {
 			height: '100%',
 			width: '100%',
-			maxWidth: 260,
-			maxHeight: 'auto',
 		},
 		btn: {
 			position: 'absolute',
@@ -46,12 +44,12 @@ export default function ServiceCard(props: ServiceCardProps) {
 		return (
 			<Grid
 				item
-				xs={6}
+				xs={12}
 				lg={3}
 				container
 				justify={props?.variant === 'image-right' ? 'flex-end' : 'flex-start'}
 			>
-				<Paper elevation={3} square>
+				<Paper elevation={3} square style={{ maxHeight: 250 }}>
 					<img src={props.image} className={classes.image} />
 				</Paper>
 			</Grid>
@@ -65,7 +63,7 @@ export default function ServiceCard(props: ServiceCardProps) {
 				: props.text;
 		};
 		return (
-			<Grid item xs={6} lg={9}>
+			<Grid item xs={12} lg={9}>
 				<Grid item xs={12}>
 					<Typography variant='h4'>{props.heading}</Typography>
 
