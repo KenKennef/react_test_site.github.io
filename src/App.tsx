@@ -11,7 +11,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MenuIcon from '@material-ui/icons/Menu';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import Backdrop from '@material-ui/core/Backdrop';
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import clsx from 'clsx';
@@ -47,6 +47,10 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		hide: {
 			display: 'none',
+		},
+		backdrop: {
+			zIndex: theme.zIndex.drawer - 1,
+			color: '#fff',
 		},
 		drawer: {
 			width: drawerWidth,
@@ -172,8 +176,16 @@ export default function PersistentDrawerLeft() {
 					className={clsx(classes.content, {
 						[classes.contentShift]: open,
 					})}
-					style={{ background: '#f0f0f0', minHeight: '100vh' }}
+					style={{
+						background: '#f0f0f0',
+						minHeight: '100vh',
+					}}
 				>
+					<Backdrop
+						className={classes.backdrop}
+						open={open}
+						onClick={handleDrawerClose}
+					></Backdrop>
 					<div className={classes.drawerHeader} />
 
 					<Switch>
